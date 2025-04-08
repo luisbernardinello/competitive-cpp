@@ -6,18 +6,18 @@
 using namespace std;
 
 struct Node {
-    char value;
     Node* left;
+    char value;
     Node* right;
-    Node(char val) : value(val), left(nullptr), right(nullptr) {}
-    Node(char val, Node* l, Node* r) : value(val), left(l), right(r) {}
+    Node(char val) : left(nullptr), value(val), right(nullptr) {}
+    Node(Node* l, char val, Node* r) : left(l), value(val), right(r) {}
 };
 
 class Solution {
 private:
-    Node* buildNode(char op, Node* right, Node* left) {
-        // ordem correta é op(direita, esquerda)
-        return new Node(op, left, right);
+    Node* buildNode(Node* left, char op, Node* right) {
+        // ordem correta é (esquerda, nó, direita)
+        return new Node(left, op, right);
     }
 
     // retorna true se op1 for operador e a prioridade(op1) >= prioridade(op2)
@@ -54,18 +54,18 @@ public:
             }
             else if (c == ')') {
                 while (!ops.empty() && ops.top() != '(')
-                    nodes.push(buildNode(pop(ops), pop(nodes), pop(nodes)));
+                    nodes.push(buildNode(pop(nodes), pop(ops), pop(nodes)));
                 if (!ops.empty()) ops.pop();  // remove '('
             }
             else if (c == '+' || c == '-' || c == '*' || c == '/') {
                 while (!ops.empty() && ops.top() != '(' && compare(ops.top(), c))
-                    nodes.push(buildNode(pop(ops), pop(nodes), pop(nodes)));
+                    nodes.push(buildNode(pop(nodes), pop(ops), pop(nodes)));
                 ops.push(c);
             }
         }
 
         while (!ops.empty())
-            nodes.push(buildNode(pop(ops), pop(nodes), pop(nodes)));
+            nodes.push(buildNode(pop(nodes), pop(ops), pop(nodes)));
 
         return nodes.empty() ? nullptr : nodes.top();
     }
@@ -96,7 +96,7 @@ public:
             cout << endl;
             level++;
         }
-        cout << endl;
+        // cout << endl;
     }
 
     void freeTree(Node* root) {
@@ -108,19 +108,35 @@ public:
     }
 };
 
+
 int main() {
     Solution solution;
-    string expressions[] = {
-        "4 * a - ( 6 + b ) + 8 / ( 9 - 7 )",
-        "a + b",
-        "( a + b * c ) * a - 4 * 5 - 6 + 1 + c * 3"
-    };
+    string expression;
+    // string expressions2[] = {
+    //     "4 * a - ( 6 + b ) + 8 / ( 9 - 7 )",
+    //     "a + b",
+    //     "( a + b * c ) * a - 4 * 5 - 6 + 1 + c * 3"
+    // };
+    bool firstCase = true;
+    
 
-    for (const string& expr : expressions) {
-        Node* root = solution.expTree(expr);
+    while (getline(cin, expression)) {
+        if (!firstCase) {
+            cout << endl; 
+        } else {
+            firstCase = false;
+        }
+        
+        Node* root = solution.expTree(expression);
         solution.printLevelByLevel(root);
         solution.freeTree(root);
     }
+
+    // for (const string& expr : expressions2) {
+    //     Node* root = solution.expTree(expr);
+    //     solution.printLevelByLevel(root);
+    //     solution.freeTree(root);
+    // }
 
     return 0;
 }
