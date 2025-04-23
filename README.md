@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://socialify.git.ci/luisbernardinello/competitive-cpp/image?font=Raleway&language=1&name=1&owner=1&pattern=Solid&theme=Auto" alt="competitive-cpp" width="650" height="200" />
+  <img src="https://socialify.git.ci/luisbernardinello/competitive-cpp/image?font=Raleway&language=1&name=1&owner=1&pattern=Solid&theme=Auto" alt="competitive-cpp" width="650" height="220" />
 </h1>
 
 <p align="center">
