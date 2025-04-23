@@ -1,10 +1,14 @@
-![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
+<h1 align="center">
+  <img src="https://socialify.git.ci/luisbernardinello/competitive-cpp/image?font=Raleway&language=1&name=1&owner=1&pattern=Solid&theme=Auto" alt="competitive-cpp" width="650" height="270" />
+</h1>
 
-### What is this ?
+<p align="center">
+  <img src="https://img.shields.io/badge/Code%20License-MIT-blue.svg" alt="License" />
+  <img src="https://img.shields.io/badge/Language-C++-00599C?logo=cplusplus" alt="C++" />
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status" />
+</p>
 
-"it’s a mind sport. It more fully develops your algorithmic reasoning skills and bridges the gap between theory and application in bite-sized chunks. Full participation develops problem solving intuition and competence" - Steven Halim in his book **Competitive Programming 4.**
-
-_In this repository you will see a collection of my competitive programming solutions in C++_
+_In this repository you will see a collection of my dsa and cp solutions implemented in C++_
 
 ## :balloon: Online Judges :balloon:
 
@@ -16,10 +20,6 @@ _In this repository you will see a collection of my competitive programming solu
 
 ### References
 
-- [1] [Competitive Programming 4](https://cpbook.net/)
-
-<h4 align="center">
-
-<img src="https://socialify.git.ci/luisbernardinello/competitive-cpp/image?font=Raleway&language=1&name=1&owner=1&pattern=Solid&theme=Auto" alt="competitive-cpp" width="498" height="270" />
-
-</h4>
+- [Competitive Programming 4](https://cpbook.net/)
+- [Introduction to Algorithms](https://mitpress.mit.edu/books/introduction-algorithms-third-edition)
+- [Algorithms by Robert Sedgewick](https://algs4.cs.princeton.edu/home/)
